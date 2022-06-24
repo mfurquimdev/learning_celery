@@ -1,5 +1,5 @@
 import parameter
-from redis_connection import redis_backend
+from celery_app.redis_connection import redis_backend
 
 # Configure the broker URI
 broker_url = "amqp://{}:{}@{}:5672/{}".format(

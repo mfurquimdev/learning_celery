@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:
+  redis:
+    image: redis:alpine
+    ports:
+      - 6379:6379
+    container_name: try-redis
+
+  rabbitmq:
+    image: rabbitmq:3.8-rc-management-alpine
+    ports:
+      - 5672:5672
+      - 15672:15672
+    container_name: try-rabbit

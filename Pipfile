@@ -1,0 +1,27 @@
+[packages]
+celery = "~=5.2.3"
+redis = "*"
+requests = "*"
+pandas = "*"
+networkx = "*"
+scikit-learn = ">=1.0.1"
+fastapi = "0.68.0"
+uvicorn = "*"
+
+[dev-packages]
+pre-commit = "~=2.17.0"
+black = "~=22.3.0"
+pytest = "*"
+coverage = ">=4.0.0"
+pytest-cov = "*"
+pytest-asyncio = "*"
+ipdb = "*"
+freezegun  = "*"
+
+[requires]
+python_version = "3.8.7"
+
+[scripts]
+server = "python main.py"
+format = "black ."
+interaction = "celery -A celery_app.tasks worker -E --concurrency=2 --loglevel=DEBUG --logfile=interaction_worker.log -n interaction_worker  -Q interaction_queue"

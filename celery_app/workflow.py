@@ -1,6 +1,7 @@
 from typing import List
 from typing import Optional
 
+from log_manager import log
 from celery import chain
 
 from celery_app.tasks import say_hello
@@ -11,6 +12,7 @@ def build_interaction(name: str, age: int, friends: List[str] = None, politely=F
     VIP = ["Mateus"]
 
     if name in VIP:
+        log.info(f"{name} is VIP")
         politely = True
 
     tasks = [

@@ -16,6 +16,6 @@ def send_message(name: str, age: int, friends: List[str] = None):
     Returns:
         task_id: ID of created message
     """
-    workflow_interaction = build_interaction(name, age, friends, politely=True)
+    workflow_interaction = build_interaction(name, age, friends, politely=False)
 
     return workflow_interaction.apply_async()

@@ -24,4 +24,4 @@ python_version = "3.8.7"
 [scripts]
 server = "python main.py"
 format = "black ."
-interaction = "celery -A celery_app.tasks worker -E --concurrency=2 --loglevel=DEBUG --logfile=interaction_worker.log -n interaction_worker  -Q interaction_queue"
+interaction = "celery -A celery_app.tasks worker -E --concurrency=2 --loglevel=INFO --logfile=interaction_worker.log -n interaction_worker  -Q interaction_queue"

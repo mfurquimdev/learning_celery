@@ -34,6 +34,7 @@ def say_hello(
         Tuple[str, int, List[str]]: Information about the person
     """
     logger.info(f"tasks.say_hello({name}, {age}, {friends})")
+    logger.info(f"{name} is saying hello to {friends}")
 
     return name, age, friends
 
@@ -56,5 +57,10 @@ def say_goodbye(
     """
     (name, age, friends) = person
     logger.info(f"tasks.say_goodbye({name}, {age}, {friends}, {politely})")
+
+    if politely:
+        logger.info(f"{name}: Farewell my friends {friends}")
+    else:
+        logger.info(f"{name}: Run you fools, {friends}!")
 
     return None
